@@ -2,12 +2,21 @@
 
 set -e
 
-TARGET="$1"
+DEBUG=false
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        --debug) DEBUG=true; echo "Debug" ;;
+        --*) echo "Unknown flag was passed"; exit 1 ;;
+        *) TARGET="$1"; echo "Target" ;;
+    esac
+    shift
+done
 
 mkdir -p build
 cd build
 
-if [[($@ == *'--debug'*)]]
+if [ $DEBUG ]
 then
     cmake -DCMAKE_BUILD_TYPE=Debug ..
 else
