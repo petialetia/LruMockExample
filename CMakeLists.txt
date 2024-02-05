@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.10)
+#TODO: Change to your cmake project settings
 
-project(TemplateProject LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.10) #TODO: Change to your cmake version
+
+project(TemplateProject LANGUAGES CXX) #TODO: Change to your project name
 
 set(CMAKE_CXX_STANDARD 20)
 

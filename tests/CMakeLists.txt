@@ -1,3 +1,5 @@
+#TODO: change to your building instructions
+
 find_package(GTest)
 
 add_executable(HelloWorldTests EXCLUDE_FROM_ALL MainTests.cpp HelloWorldTests.cpp)

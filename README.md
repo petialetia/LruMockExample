@@ -23,3 +23,5 @@ There are also 3 scripts:
 * requirements_ubuntu.sh - installation of all requirements for Ubuntu platform
 * build.sh - building script. By default, builds project, but can build any test case if you provide it name as an argument, example: `./build.sh HelloWorldTests`. Also has `--debug` flag if you want to use sanitizers.
 * run.sh - same as build.sh, but it also runs compilation result. All arguments pass to the build.sh, so you can use flag `--debug` or specify target.
+
+[comment]: # TODO: write your own README

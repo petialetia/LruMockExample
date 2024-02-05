@@ -12,7 +12,7 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
-EXECUTABLE_NAME=$([ "$TARGET" == "" ] && echo "TemplateProject" || echo "$TARGET")
+EXECUTABLE_NAME=$([ "$TARGET" == "" ] && echo "TemplateProject" || echo "$TARGET") #TODO: change to your default target
 
 EXECUTABLE="bin/${EXECUTABLE_NAME}.out"
 
