@@ -1,3 +1,4 @@
+#TODO: change to your building instructions
 
 add_library(HelloWorld STATIC HelloWorld.cpp)
 
