@@ -16,5 +16,5 @@ set(CMAKE_CXX_FLAGS_DEBUG "-fsanitize=undefined -fsanitize=address")
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_subdirectory(test)
+add_subdirectory(tests)
 add_subdirectory(src)
