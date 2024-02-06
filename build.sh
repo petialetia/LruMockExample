@@ -6,9 +6,9 @@ DEBUG=false
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
-        --debug) DEBUG=true; echo "Debug" ;;
+        --debug) DEBUG=true;;
         --*) echo "Unknown flag was passed"; exit 1 ;;
-        *) TARGET="$1"; echo "Target" ;;
+        *) TARGET="$1";;
     esac
     shift
 done
