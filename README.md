@@ -4,7 +4,7 @@ Simple c++ project, created as a template for others, more serious projects
 
 ## How to use:
 
-* Create an empty c++ project local repository
+* Create a repository with just an init commit (for example, just with empty README.md)
 * `git remote add template https://github.com/petialetia/CppTemplateProject.git`
 * `git remote set-url --push template DISABLE`
 * `git fetch template`
