@@ -1,8 +1,9 @@
 #include <Fibonacci.hpp>
 
+template<template<typename Key, typename Value> typename LruCache>
 size_t evalFibonacci(size_t index)
 {
-    static boost::compute::detail::lru_cache<size_t, size_t> last_answers(N_SLOTS_FOR_CACHE);
+    static LruCache<size_t, size_t> last_answers(N_SLOTS_FOR_CACHE);
 
     if (auto recalled_answer = last_answers.get(index))
         return *recalled_answer;
