@@ -5,5 +5,5 @@
 
 int main()
 {
-    std::cout << evalFibonacci<boost::compute::detail::lru_cache>(5) << std::endl;
+    std::cout << evalFibonacci<boost::compute::detail::lru_cache<size_t, size_t>>(5) << std::endl;
 }
