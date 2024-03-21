@@ -1,6 +1,14 @@
-#TODO: change to your building instructions
+include(FetchContent)
 
-find_package(GTest)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG main
+)
 
-add_executable(HelloWorldTests EXCLUDE_FROM_ALL MainTests.cpp HelloWorldTests.cpp)
-target_link_libraries(HelloWorldTests PUBLIC ${GTEST_LIBRARIES} HelloWorld)
+FetchContent_MakeAvailable(googletest)
+
+include_directories(${gtest_SOURCE_DIR}/include ${gmock_SOURCE_DIR}/include)
+
+add_executable(FibonacciTests EXCLUDE_FROM_ALL MainTests.cpp FibonacciTests.cpp)
+target_link_libraries(FibonacciTests PUBLIC GTest::gtest_main GTest::gmock Fibonacci)
