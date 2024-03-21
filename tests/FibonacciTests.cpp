@@ -16,7 +16,7 @@ public:
     MOCK_METHOD(void, insert, (const Key& key, const Value& value), ());
 };
 
-TEST(Fibonacci, MockCheckGet)
+TEST(Fibonacci, MockCheckGetNothing)
 {
     MockLruCache<std::size_t, std::size_t> lru_storage;
 
@@ -26,5 +26,22 @@ TEST(Fibonacci, MockCheckGet)
     EXPECT_CALL(lru_storage, insert(0, 0));
 
     auto answer = evalFibonacciCaching(0, lru_storage);
+    EXPECT_EQ(answer, 0);
+}
+
+TEST(Fibonacci, MockCheckGetInserted)
+{
+    MockLruCache<std::size_t, std::size_t> lru_storage;
+
+    EXPECT_CALL(lru_storage, get(0))
+        .WillOnce(testing::Return(boost::none))
+        .WillOnce(testing::Return(0));
+
+    EXPECT_CALL(lru_storage, insert(0, 0));
+
+    auto answer = evalFibonacciCaching(0, lru_storage);
+    EXPECT_EQ(answer, 0);
+
+    answer = evalFibonacciCaching(0, lru_storage);
     EXPECT_EQ(answer, 0);
 }
