@@ -1,5 +1,3 @@
-//TODO: Change to your own tests
-
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
